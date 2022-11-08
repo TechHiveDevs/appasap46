@@ -1,0 +1,243 @@
+
+  /rating:
+    get:
+     summary: Get all ratings
+     tags: [rating]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/rating'
+ 
+    post:
+      summary: Create rating
+      tags: [rating]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/rating'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rating'
+ 
+  /rating/{id}:
+    get:
+      summary: Get rating by id
+      tags: [rating]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rating'
+ 
+    put:
+      summary: Edit rating
+      tags: [rating]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rating'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/rating'
+ 
+    delete:
+      summary: Delete rating
+      tags: [rating]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rating'
+
+  /products:
+    get:
+     summary: Get all productss
+     tags: [products]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/products'
+ 
+    post:
+      summary: Create products
+      tags: [products]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/products'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/products'
+ 
+  /products/{id}:
+    get:
+      summary: Get products by id
+      tags: [products]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/products'
+ 
+    put:
+      summary: Edit products
+      tags: [products]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/products'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/products'
+ 
+    delete:
+      summary: Delete products
+      tags: [products]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/products'
+
+  /user:
+    get:
+     summary: Get all users
+     tags: [user]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/user'
+ 
+    post:
+      summary: Create user
+      tags: [user]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+  /user/{id}:
+    get:
+      summary: Get user by id
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+ 
+    put:
+      summary: Edit user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/user'
+ 
+    delete:
+      summary: Delete user
+      tags: [user]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  components:
+    schemas:
+  
+      rating:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          products:
+            type: string
+      products:
+        type: object
+        properties:
+      
+          id:
+            type: string
+          user:
+            type: string
+      user:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          email:
+            type: string
+          gender:
+            type: string
+          age:
+            type: number
+          password:
+            type: string
